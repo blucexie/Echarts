@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title></title>
+    <style>
+        body, html,#main{
+         width: 100%;
+         height: 100%;
+            overflow: hidden;
+            margin:0;
+     }
+    </style>
+
+</head>
+<body>
+<div id="main" ></div>
+	
+	<script type="text/javascript"  src="http://gallerybox.echartsjs.com/dep/jquery/jquery.js"></script>
+	
+	<script type="text/javascript"  src="http://gallerybox.echartsjs.com/dep/dat.gui.min.js"></script>
+	<script type="text/javascript"  src="http://gallerybox.echartsjs.com/js/loadIframeScripts.js"></script>
+	<script type="text/javascript"  src="http://gallerybox.echartsjs.com/js/run.js"></script>
+	<script type="text/javascript"  src="js/echarts.js"></script>
+	<script type="text/javascript"  src="http://gallerybox.echartsjs.com/dep/echarts/latest/extension/bmap.min.js"></script>
+	<script type="text/javascript"  src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+    <script type="text/javascript"  src="js/china.js"></script> <!-- 地图包-->
+
+	
+	
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+    myChart.setOption({
+        series: [{
+            type: 'map',
+            map: 'china'
+        }]
+    });
+    var colorList = [
+        '#5AB1EF', '#2EC7C9', '#B6A2DE', "#FFB980", '#ED868C',"#FF0000","#C23531"
+    ];
+
+    var labels = ["01","02", "03", "04", "05", "06"];
+
+    var points = {
+        "01": [
+            [114.06667,22.61667],
+            [114.16667,22.61667],
+            [114.05967,22.54667],
+            [114.05667,22.53667],
+            [114.06067,22.67167],
+            [114.03667,22.63667],
+            [114.04667,22.60667],
+            [114.29667,22.63667],
+            [114.09667,22.60667],
+            [114.13667,22.63667],
+            [114.05667,22.61667],
+            [114.13453,22.62322],
+            [113.86667,22.68667],
+            [113.96667,22.70667],
+            [113.91667,22.74667],
+            [113.99667,22.74667],
+            [114.19667,22.72667],
+            [114.13667,22.70667]
+        ],
+        "02": [
+            [113.92667,22.74667],
+            [114.02457,22.65432],
+            [114.17537,22.68532],
+            [114.02369,22.57532],
+            [114.04533,22.52236],
+            [114.03459,22.65433],
+            [114.06756,22.62332],
+            [114.16786,22.63432],
+            [114.06575,22.55464],
+            [114.02344,22.56576],
+            [114.06762,22.64522],
+            [120.545678, 31.283175, 1],
+            [120.743858, 31.263709, 1],
+            [120.736099, 31.268243, 1],
+            [120.800857, 31.323972, 1],
+            [120.677751, 31.301185, 1],
+            [120.730436, 31.268363, 1],
+            [120.633838, 31.393596, 1]
+        ],
+        "03": [
+            [113.96756,22.73221],
+            [114.04534,22.66564],
+            [114.12322,22.61111],
+            [114.04554,22.56752],
+            [114.03333,22.55463],
+            [114.04543,22.67867],
+            [114.02321,22.67887],
+            [114.12324,22.65464],
+            [114.08796,22.52233],
+            [114.08988,22.52311],
+            [114.01244,22.62321],
+            [120.740906, 31.259732, 1],
+            [120.736099, 31.268243, 1],
+            [120.736099, 31.268243, 1],
+            [120.673689, 31.301777, 1],
+            [120.676936, 31.300959, 1],
+            [120.647678, 31.363734, 1],
+            [120.737806, 31.269298, 1],
+            [120.736745, 31.269358, 1],
+            [120.830034, 31.321659, 1],
+            [120.745719, 31.270795, 1],
+            [120.743508, 31.269909, 1],
+            [120.662893, 31.29676, 1],
+            [120.67829, 31.301224, 1],
+            [120.750679, 31.276876, 1],
+            [120.726842, 31.325248, 1],
+            [120.730733, 31.296624, 1],
+            [120.735823, 31.281554, 1]
+
+        ],
+        "04": [
+            [114.01111,22.62222],
+            [114.13333,22.64444],
+            [114.05555,22.56666],
+            [114.07777,22.58888],
+            [114.03333,22.68888],
+            [114.02332,22.62422],
+            [114.13454,22.65653],
+            [114.02332,22.56752],
+            [114.02322,22.59800],
+            [114.08753,22.62470]
+        ],
+        "05": [
+            [114.02313,22.64648],
+            [114.17898,22.60964],
+            [114.04679,22.53456],
+            [114.05909,22.53457],
+            [114.02345,22.68888],
+            [114.09887,22.69875],
+            [114.11111,22.68754],
+            [114.05555,22.50976],
+            [114.01234,22.58764],
+            [114.02345,22.62345],
+            [120.677336, 31.287868, 1],
+            [120.66268, 31.295012, 1],
+            [120.739548, 31.271522, 1],
+            [120.605262, 31.20214, 1],
+            [120.742671, 31.271786, 1],
+            [120.621279, 31.260658, 1],
+            [120.408367, 31.339928, 1],
+            [120.618686, 31.293764, 1],
+            [120.614625, 31.367224, 1],
+            [120.630822, 31.375763, 1]
+        ],
+        "06": [
+            [114.10987,22.63432],
+            [114.46762,22.62344],
+            [114.04244,22.54567],
+            [114.03244,22.53244],
+            [114.09654,22.62222],
+            [114.06786,22.62354],
+            [114.10976,22.64578],
+            [114.05877,22.59876],
+            [114.12323,22.55657],
+            [114.05466,22.65786]
+        ],
+        ">20K": [
+            [120.752488, 31.278488, 1]
+        ]
+    };
+    var series = labels.map((i, j) => {
+                var name = i;
+    var data = points[name];
+    var color = colorList[j];
+    return {
+        name: name,
+        type: 'effectScatter',
+        coordinateSystem: 'bmap',
+        data: data,
+        showEffectOn: 'render',
+        rippleEffect: {
+            brushType: 'stroke'
+        },
+        itemStyle: {
+            normal: {
+                color: color
+            }
+        }
+    }
+    })
+
+
+
+    var option = {
+
+        bmap: {
+            center: [114.06667,22.61667],
+            zoom: 12,
+            roam: true,
+            enableMapClick: false,
+            mapStyle: {
+                styleJson: [{
+                    "featureType": "all",
+                    "elementType": "all",
+                    "stylers": {
+                        "lightness":37,
+                        "saturation": -100
+                    }
+                }, {
+                    "featureType": "highway",
+                    "elementType": "geometry.fill",
+                    "stylers": {
+                        "color": "#ffffff"
+                    }
+                }, {
+                    "featureType": "poi",
+                    "elementType": "labels.icon",
+                    "stylers": {
+                        "visibility": "on"
+                    }
+                }, {
+                    "featureType": "road",
+                    "elementType": "labels",
+                    "stylers": {
+                        "visibility": "off"
+                    }
+                }]
+            }
+        },
+        title: {
+            text: "深圳市银行选址",
+            subtext: "",
+            left: 'center',
+            top: 5,
+            backgroundColor: "rgba(255,255,255,0.8)",
+            textStyle: {
+                color: "#2B98DC",
+                fontWeight: "bold"
+            }
+        },
+        legend: {
+            orient: 'vertical',
+            bottom: '50',
+            left:"10",
+            backgroundColor:"rgba(255,255,255,0.8)",
+            data: labels.reverse(),
+            formatter: function (name) {
+                return ' ' + name;
+            }
+        },
+        series:series
+
+    }
+
+    myChart.setOption(option);
+    setTimeout(init, 0);
+
+
+    function init() {
+        initMap();
+    }
+
+    function getMap() {
+        return myChart.getModel().getComponent('bmap').getBMap();
+    }
+
+    function initMap() {
+       var top_left_navigation = new BMap.NavigationControl({
+            type: BMAP_NAVIGATION_CONTROL_SMALL
+        });
+        var map = getMap();
+
+        //map.centerAndZoom("苏州", 13);
+        // map.addControl(top_left_navigation);
+        map.disableDoubleClickZoom();
+        return map;
+    }
+</script>
+</body>
+</html>
