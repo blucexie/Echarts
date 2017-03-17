@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+     <script type="text/javascript" src="js/echarts.js"></script>
+
+<body>
+<div id="main" style="width: 1600px;height:768px;"></div>
+<script type="text/javascript">
+
+    var myChart = echarts.init(document.getElementById('main'));
+    var xData = function() {
+        var data = [];
+        for (var i = 6; i < 25; i+=2) {
+            data.push(i + "点");
+        }
+        return data;
+    }();
+
+    option = {
+        backgroundColor: "#344b58",
+        "title": {
+            "text": "深银行选址人流量",
+            "subtext": "",
+            x: "4%",
+
+            textStyle: {
+                color: '#fff',
+                fontSize: '22'
+            },
+            subtextStyle: {
+                color: '#90979c',
+                fontSize: '16',
+
+            },
+        },
+        "tooltip": {
+            "trigger": "axis",
+            "axisPointer": {
+                "type": "shadow",
+                textStyle: {
+                    color: "#fff"
+                }
+
+            },
+        },
+        "grid": {
+            "borderWidth": 0,
+            "top": 110,
+            "bottom": 95,
+            textStyle: {
+                color: "#fff"
+            }
+        },
+        "legend": {
+            x: '30%',
+            top: '11%',
+            textStyle: {
+                color: '#90979c',
+            },
+            "data": ['深南大道','乐园路','侨城西街','香山东街', '滨海大道', '平均']
+        },
+
+
+        "calculable": true,
+        "xAxis": [{
+            "type": "category",
+            "axisLine": {
+                lineStyle: {
+                    color: '#90979c'
+                }
+            },
+            "splitLine": {
+                "show": false
+            },
+            "axisTick": {
+                "show": true
+            },
+            "splitArea": {
+                "show": false
+            },
+            "axisLabel": {
+                "interval": 0,
+
+            },
+            "data": xData,
+        }],
+        "yAxis": [{
+            "type": "value",
+            "splitLine": {
+                "show": false
+            },
+            "axisLine": {
+                lineStyle: {
+                    color: '#90979c'
+                }
+            },
+            "axisTick": {
+                "show": false
+            },
+            "axisLabel": {
+                "interval": 0,
+
+            },
+            "splitArea": {
+                "show": false
+            },
+
+        }],
+        "dataZoom": [{
+            "show": true,
+            "height": 30,
+            "xAxisIndex": [
+                0
+            ],
+            bottom: 30,
+            "start": 10,
+            "end": 80,
+            handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+            handleSize: '110%',
+            handleStyle:{
+                color:"#d3dee5",
+
+            },
+            textStyle:{
+                color:"#fff"},
+            borderColor:"#90979c"
+
+
+        }, {
+            "type": "inside",
+            "show": true,
+            "height": 15,
+            "start": 1,
+            "end": 35
+        }],
+        "series": [{
+            name: '深南大道',
+            type: 'line',
+            symbolSize:12,
+            symbol:'circle',
+            "itemStyle": {
+                "normal": {
+                    "color": "rgba(0,191,183,1)",
+                    "barBorderRadius": 0,
+                    "label": {
+                        "show": true,
+                        "position": "top",
+                        formatter: function(p) {
+                            return p.value > 0 ? (p.value) : '';
+                        }
+                    }
+                }
+            },
+            data: [300, 1999, 2988, 2400, 1987, 2100,3500,2467,1457,500]
+        },
+            {
+                name:'乐园路',
+                type: 'line',
+                symbolSize:12,
+                symbol:'circle',
+                "itemStyle": {
+                    "normal": {
+                        "color": "rgba(255,144,128,1)",
+                        "barBorderRadius": 0,
+                        "label": {
+                            "show": true,
+                            "position": "top",
+                            formatter: function(p) {
+                                return p.value > 0 ? (p.value) : '';
+                            }
+                        }
+                    }
+                },
+                data: [435, 2302, 3500, 2824, 4566, 2711,1345,1722,1111,223]
+            },
+            {
+                name:'侨城西街',
+                type: 'line',
+                symbolSize:12,
+                symbol:'circle',
+                "itemStyle": {
+                    "normal": {
+                        "color": "rgba(145,199,174,1)",
+                        "barBorderRadius": 0,
+                        "label": {
+                            "show": true,
+                            "position": "top",
+                            formatter: function(p) {
+                                return p.value > 0 ? (p.value) : '';
+                            }
+                        }
+                    }
+                },
+                data: [900, 3432, 3200, 4000, 3423, 2942,1955,1322,954,754]
+            },
+            {
+                name:'香山东街',
+                type: 'line',
+                symbolSize:12,
+                symbol:'circle',
+                "itemStyle": {
+                    "normal": {
+                        "color": "rgba(194,53,49,1)",
+                        "barBorderRadius": 0,
+                        "label": {
+                            "show": true,
+                            "position": "top",
+                            formatter: function(p) {
+                                return p.value > 0 ? (p.value) : '';
+                            }
+                        }
+                    }
+                },
+                data: [1132, 1432, 2654, 3132, 3223, 3532,3832,2721,1954,554]
+            },
+            {
+                name:'滨海大道',
+                type: 'line',
+                symbolSize:12,
+                symbol:'circle',
+                "itemStyle": {
+                    "normal": {
+                        "color": "rgba(252,230,48,1)",
+                        "barBorderRadius": 0,
+                        "label": {
+                            "show": true,
+                            "position": "top",
+                            formatter: function(p) {
+                                return p.value > 0 ? (p.value) : '';
+                            }
+                        }
+                    }
+                },
+                data: [342, 2343, 3214, 2432, 2654, 4111,3032,3211,1754,1004]
+            },
+        ]
+    }
+
+    myChart.setOption(option);
+
+
+</script>
+</body>
+
+</html>
